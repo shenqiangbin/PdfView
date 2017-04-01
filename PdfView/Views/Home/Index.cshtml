@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<script src="~/Scripts/flexpaper_flash.js"></script>
+<script src="~/Scripts/flexpaper_flash_debug.js"></script>
+
+<form id="form1">
+
+    <div style="position:absolute;left:10px;top:110px;">
+        <a id="viewerPlaceHolder" style="width:660px;height:480px;display:block;border:1px solid red;"></a>
+        <h1>使用静态SWF实现</h1>
+        <script type="text/javascript">
+
+            $(function () {
+                var fp = new FlexPaperViewer(
+                                                        ///FlexPaper组件的SWF框架路径
+                                                        '/Scripts/FlexPaperViewer',
+
+                                                        'viewerPlaceHolder',
+                                                        {
+                                                            config:
+                                                            {
+                                                                ///需要显示的.swf
+                                                                SwfFile: '~/SWF/1.swf',
+
+                                                                Scale: 0.6,
+
+                                                                ZoomTransition: 'easeOut',
+
+                                                                ZoomTime: 0.5,
+
+                                                                ZoomInterval: 0.2,
+
+                                                                FitPageOnLoad: false,
+
+                                                                FitWidthOnLoad: false,
+
+                                                                PrintEnabled: true,
+
+                                                                FullScreenAsMaxWindow: false,
+
+                                                                ProgressiveLoading: false,
+
+                                                                MinZoomSize: 0.2,
+
+                                                                MaxZoomSize: 5,
+
+                                                                SearchMatchAll: false,
+
+                                                                InitViewMode: 'Portrait',
+
+                                                                ViewModeToolsVisible: true,
+
+                                                                ZoomToolsVisible: true,
+
+                                                                NavToolsVisible: true,
+
+                                                                CursorToolsVisible: true,
+
+                                                                SearchToolsVisible: true,
+
+                                                                localeChain: 'en_US'
+
+                                                            }
+
+                                                        });
+            });
+
+        </script>
+
+    </div>
+</form>
