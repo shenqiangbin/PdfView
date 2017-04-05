@@ -97,6 +97,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="PDF\1.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\FlexPaper.swf" />
     <Content Include="Scripts\FlexPaperViewer.swf" />
     <Content Include="Scripts\flexpaper_flash.js" />
     <Content Include="Scripts\flexpaper_flash_debug.js" />
