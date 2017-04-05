@@ -89,11 +89,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="pdf2htmlEX\data\base.css" />
+    <Content Include="pdf2htmlEX\data\base.min.css" />
+    <Content Include="pdf2htmlEX\data\compatibility.min.js" />
+    <Content Include="pdf2htmlEX\data\fancy.css" />
+    <Content Include="pdf2htmlEX\data\fancy.min.css" />
+    <Content Include="pdf2htmlEX\data\pdf2htmlEX-64x64.png" />
+    <Content Include="pdf2htmlEX\data\pdf2htmlEX.js" />
+    <Content Include="pdf2htmlEX\data\pdf2htmlEX.min.js" />
+    <Content Include="pdf2htmlEX\pdf2htmlEX.exe" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="PDF\pdf2htmlEX.pdf" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -102,6 +123,22 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="pdf2htmlEX\data\.DS_Store" />
+    <Content Include="pdf2htmlEX\data\base.css.in" />
+    <Content Include="pdf2htmlEX\data\build_css.sh" />
+    <Content Include="pdf2htmlEX\data\build_js.sh" />
+    <Content Include="pdf2htmlEX\data\fancy.css.in" />
+    <Content Include="pdf2htmlEX\data\LICENSE" />
+    <Content Include="pdf2htmlEX\data\manifest" />
+    <Content Include="pdf2htmlEX\data\pdf2htmlEX.js.in" />
+    <Content Include="PDF\1.pdf" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,7 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="html\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
