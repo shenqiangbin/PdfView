@@ -105,6 +105,7 @@
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="SWF\1.swf" />
+    <Content Include="SWF\view.swf" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

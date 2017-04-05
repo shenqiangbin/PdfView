@@ -22,7 +22,7 @@ namespace PdfView.Controllers
             string savePath = Server.MapPath("/SWF");
             string filePath = Server.MapPath("/PDF/1.pdf");
             string args = "  -t " + filePath + "  -o " + savePath + "//MYTEST.swf";
-            args = " -t e:/1.pdf -o e:/1.swf";
+            args = " -t e:/1.pdf -o e:/1.swf -T 9";
             //args = "  -t c:/users/sks/documents/visual studio 2015/Projects/PdfView/PdfView/PDF/1.pdf  -o c:/users/sks/documents/visual studio 2015/Projects/PdfView/PdfView/SWF/MYTEST.swf";
             PDF2SWF.ExecutCmd(cmdStr, args);
         }
