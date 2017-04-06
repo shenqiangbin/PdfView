@@ -1,49 +1,11 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿
+@{
+    ViewBag.Title = "首页";
 }
 
-<h1>使用静态SWF实现</h1>
+<h2>pdf列表</h2>
 
-<script src="~/Scripts/flexpaper_flash.js"></script>
-<script src="~/Scripts/flexpaper_flash_debug.js"></script>
+<a href="/home/viewPDF?name=view">view.pdf</a>
+<a href="/home/viewPDF?name=AnnualReport2016_cn">华为年报.pdf</a>
 
-<form id="form1">
-    <div style="position:absolute;left:10px;top:110px;">
-        <a id="viewerPlaceHolder" style="width:660px;height:480px;display:block;border:1px solid red;"></a>        
-    </div>
-</form>
 
-<script type="text/javascript">
-            $(function () {
-                var fp = new FlexPaperViewer(
-                ///FlexPaper组件的SWF框架路径
-                '/Scripts/FlexPaper',
-                'viewerPlaceHolder',
-                {
-                    config:
-                    {
-                        ///需要显示的.swf 不能显示1.swf的，版本有问题
-                        SwfFile: '/SWF/1.swf',
-                        Scale: 1,
-                        ZoomTransition: 'easeOut',
-                        ZoomTime: 0.5,
-                        ZoomInterval: 0.2,
-                        FitPageOnLoad: false,
-                        FitWidthOnLoad: false,
-                        PrintEnabled: true,
-                        FullScreenAsMaxWindow: false,
-                        ProgressiveLoading: false,
-                        MinZoomSize: 0.2,
-                        MaxZoomSize: 5,
-                        SearchMatchAll: false,
-                        InitViewMode: 'Portrait',
-                        ViewModeToolsVisible: true,
-                        ZoomToolsVisible: true,
-                        NavToolsVisible: true,
-                        CursorToolsVisible: true,
-                        SearchToolsVisible: true,
-                        localeChain: 'zh_CN'
-                    }
-                });
-            });
-</script>

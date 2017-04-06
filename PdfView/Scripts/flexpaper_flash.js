@@ -163,7 +163,8 @@ function onDocumentPrinted(){
 			// flashembed defaults
 			allowfullscreen: true,
 			allowscriptaccess: 'always',
-			quality: 'high',	
+			quality: 'high',
+			allowFullScreenInteractive: true,
 			
 			// flashembed specific options
 			version: [3, 0],
@@ -324,7 +325,8 @@ function onDocumentPrinted(){
 					html += '<param name="'+ key +'" value="'+ opts[key] +'" />';
 				}
 			}	
-		
+			//html += '<param name="allowFullScreenInteractive" value="true">';
+
 			/******* FLASHVARS *******/
 			var vars = "";
 			

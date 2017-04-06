@@ -11,23 +11,31 @@ namespace PdfView.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            Handle();
             return View();
         }
 
-        private void Handle()
+        public ActionResult ViewPDF(string name)
+        {
+            //Handle(name);
+            ViewBag.FileName = name;
+            return View();
+        }
+
+        private void Handle(string name)
         {
             string cmdStr = "C:/Program Files/SWFTools/pdf2swf.exe";
+            cmdStr = "C:/Program Files (x86)/SWFTools/pdf2swf.exe";
+
             string savePath = Server.MapPath("/SWF");
-            string filePath = Server.MapPath("/PDF/1.pdf");
-            string args = "  -t " + filePath + "  -o " + savePath + "//MYTEST.swf";
-            //args = " -t d:/1.pdf -o d:/1.swf -T 9 -f";// -T 9 表示版本9 -f 实现搜索时，高亮显示            
-            args = BuildAgrs(filePath, savePath + "//1.swf");
+            string filePath = Server.MapPath($"/PDF/{name}.pdf");
+            string args = BuildAgrs(filePath, savePath + $"/{name}.swf");
+
             PDF2SWF.ExecutCmd(cmdStr, args);
         }
 
         private string BuildAgrs(string filePath, string savePath)
         {
+            //args = " -t d:/1.pdf -o d:/1.swf -T 9 -f";// -T 9 表示版本9 -f 实现搜索时，高亮显示    
             return $" -t {filePath} -o {savePath} -T 9 -f";
         }
 

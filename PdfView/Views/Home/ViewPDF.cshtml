@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "PDF查看";
+    var file = $"/SWF/{ViewBag.FileName}.swf";
+}
+
+<h1>PDF查看</h1>
+
+<script src="~/Scripts/flexpaper_flash.js"></script>
+
+
+<div>
+    <a id="viewerPlaceHolder" style="width:860px;height:480px;display:block;border:1px solid red;"></a>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        var fp = new FlexPaperViewer(
+        ///FlexPaper组件的SWF框架路径
+        '/Scripts/FlexPaper',
+        'viewerPlaceHolder',
+        {
+            config:
+            {
+                ///需要显示的.swf 不能显示1.swf的，版本有问题
+                SwfFile: '@file',
+                Scale: 1.4,
+                ZoomTransition: 'easeOut',
+                ZoomTime: 0.5,
+                ZoomInterval: 0.2,
+                FitPageOnLoad: false,
+                FitWidthOnLoad: true,
+                FullScreenAsMaxWindow: false,
+                ProgressiveLoading: true,
+                MinZoomSize: 0.2,
+                MaxZoomSize: 5,
+                SearchMatchAll: false,
+
+                InitViewMode: 'Portrait',
+                RenderingOrder: 'flash,html5',
+                StartAtPage: '',
+
+                ViewModeToolsVisible: true,
+                ZoomToolsVisible: true,
+                NavToolsVisible: true,
+                CursorToolsVisible: true,
+                SearchToolsVisible: true,
+                WMode: 'window',
+                localeChain: 'zh_CN'
+            }
+        });
+    });
+</script>
+
+
+   
