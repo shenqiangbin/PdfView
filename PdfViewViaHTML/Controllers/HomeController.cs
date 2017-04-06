@@ -20,8 +20,9 @@ namespace PdfViewViaHTML.Controllers
         {
             string cmdStr = Server.MapPath("~/pdf2htmlEX/pdf2htmlEX.exe");
             string args = BuildAgrs(name);
-            ExecutCmd(cmdStr, args);
-            
+            //ExecutCmd(cmdStr, args);
+            ExecuteCmdAdmin($"{cmdStr} {args}");
+
             return Redirect($"/html/{name}.html");
         }
 
@@ -29,22 +30,52 @@ namespace PdfViewViaHTML.Controllers
         {
             //D:\Git\PdfView\PdfViewViaHTML\pdf2htmlEX>pdf2htmlEX.exe --dest-dir ../html ../pdf/1.pdf
             string pdfPath = Server.MapPath("~/PDF");
-            return $" --zoom 3.6 --embed cfijo --split-pages 1 --dest-dir pdfhtml1234 --page-filename {fileName}-%d.page  {pdfPath}/{fileName}.pdf";
+            return $" --zoom 3.6 --embed cfijo --split-pages 1 --dest-dir e:/pdfhtml1234 --page-filename {fileName}-%d.page  {pdfPath}/{fileName}.pdf";
         }
 
         private void ExecutCmd(string cmd, string args)
         {
+            string output = "";
             using (Process p = new Process())
             {
                 p.StartInfo.FileName = cmd;
                 p.StartInfo.Arguments = args;
                 p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.StartInfo.RedirectStandardError = true;
                 p.StartInfo.CreateNoWindow = true;
                 p.Start();
                 p.PriorityClass = ProcessPriorityClass.High;
+                output += p.StandardOutput.ReadToEnd();
+                output += p.StandardError.ReadToEnd();
                 p.WaitForExit();               
             }
+            System.IO.File.WriteAllText("d:/1.txt",output);
+        }
+
+        private void ExecuteCmdAdmin(string sql)
+        {
+            //c:\windows\system32\inetsrv>exit
+            //Cannot create temp directory: Permission denied
+            string output = "";
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/c C:\\Windows\\System32\\cmd.exe";
+            startInfo.RedirectStandardInput = true;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.RedirectStandardError = true;
+            startInfo.UseShellExecute = false;
+            startInfo.Verb = "RunAs";
+            Process process = new Process();
+            process.StartInfo = startInfo;
+            process.Start();
+            process.StandardInput.WriteLine(sql);
+            process.StandardInput.WriteLine("exit");
+            output += process.StandardOutput.ReadToEnd();
+            output += process.StandardError.ReadToEnd();
+
+            process.WaitForExit();
+            System.IO.File.AppendAllText("d:/1.txt", output);
         }
 
         private void CopyFile(string sources, string dest)
