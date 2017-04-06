@@ -94,6 +94,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="html\1.css" />
+    <Content Include="html\1.html" />
+    <Content Include="html\base.min.css" />
+    <Content Include="html\compatibility.min.js" />
+    <Content Include="html\fancy.min.css" />
+    <Content Include="html\pdf2htmlEX-64x64.png" />
+    <Content Include="html\pdf2htmlEX.min.js" />
     <Content Include="pdf2htmlEX\data\base.css" />
     <Content Include="pdf2htmlEX\data\base.min.css" />
     <Content Include="pdf2htmlEX\data\compatibility.min.js" />
@@ -106,6 +113,13 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="PDF\pdf2htmlEX.pdf" />
+    <Content Include="html\1-1.page" />
+    <Content Include="html\1.outline" />
+    <Content Include="html\f1.woff" />
+    <Content Include="html\f2.woff" />
+    <Content Include="html\f3.woff" />
+    <Content Include="html\f4.woff" />
+    <None Include="Properties\PublishProfiles\pdfViewViaHtml.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -148,7 +162,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="html\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
