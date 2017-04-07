@@ -29,6 +29,7 @@ namespace PdfView.Controllers
             string savePath = Server.MapPath("/SWF");
             string filePath = Server.MapPath($"/PDF/{name}.pdf");
             string args = BuildAgrs(filePath, savePath + $"/{name}.swf");
+            //string args = BuildAgrs(filePath,savePath + $"/{name}%.swf"); 分页
 
             string result = PDF2SWF.ExecutCmd(cmdStr, args);
             return result;
