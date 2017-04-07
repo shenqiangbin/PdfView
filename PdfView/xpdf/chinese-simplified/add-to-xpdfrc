@@ -1,0 +1,9 @@
+#----- begin Chinese Simplified support package (2011-sep-02)
+cidToUnicode	Adobe-GB1	e:/xpdf/chinese-simplified/Adobe-GB1.cidToUnicode
+unicodeMap	ISO-2022-CN	e:/xpdf/chinese-simplified/ISO-2022-CN.unicodeMap
+unicodeMap	EUC-CN		e:/xpdf/chinese-simplified/EUC-CN.unicodeMap
+unicodeMap	GBK		e:/xpdf/chinese-simplified/GBK.unicodeMap
+cMapDir		Adobe-GB1	e:/xpdf/chinese-simplified/CMap
+toUnicodeDir			e:/xpdf/chinese-simplified/CMap
+#fontFileCC	Adobe-GB1	/usr/..../gkai00mp.ttf
+#----- end Chinese Simplified support package
