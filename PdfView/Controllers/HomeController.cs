@@ -16,13 +16,24 @@ namespace PdfView.Controllers
 
         public ActionResult ViewPDF(string name)
         {
-            //ViewBag.Msg = Handle(name);
+            string savePath = Server.MapPath("/SWF");
+
+            if (!System.IO.File.Exists(savePath + $"/{name}.swf"))
+                ViewBag.Msg = Handle(name);
+            else
+                ViewBag.Msg = "已转换的文件阅览";
+
             ViewBag.FileName = name;
+            
             return View();
         }
 
         private string Handle(string name)
         {
+            //Response.ContentType = "text/plain";
+            //Response.Write("PDF文件转换中...");
+            //Response.Flush();
+
             string cmdStr = "C:/Program Files/SWFTools/pdf2swf.exe";
             cmdStr = "C:/Program Files (x86)/SWFTools/pdf2swf.exe";
 
@@ -38,7 +49,7 @@ namespace PdfView.Controllers
         private string BuildAgrs(string filePath, string savePath)
         {
             //args = " -t d:/1.pdf -o d:/1.swf -T 9 -f";// -T 9 表示版本9 -f 实现搜索时，高亮显示    
-            return $" -t {filePath} -o {savePath} -T 9 -f  -s languagedir=e:/xpdf/chinese-simplified";
+            return $" -t {filePath} -o {savePath} -T 9 -f  -s languagedir=e:/xpdf/chinese-simplified -s storeallcharacters";
         }
 
     }
