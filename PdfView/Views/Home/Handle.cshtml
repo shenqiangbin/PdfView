@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "文档转换中";
+}
+
+<h2>文档转换中</h2>
+
+<p id="msg"></p>
+
+<script>
+    var name = '@ViewBag.Name';
+    var data = { name: name };
+    $.ajax({
+        url: "/home/HandleAjax",
+        type: "post",
+        data: data,
+        success: function (result) {
+            $("#msg").html(result.msg);
+            if (result.code == 200)
+                window.location.href = "/home/viewpdf?name=" + name;
+        },
+        error: function () {
+            $("#msg").html("出错了");
+        }
+    });
+</script>
