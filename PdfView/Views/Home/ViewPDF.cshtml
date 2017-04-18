@@ -19,15 +19,17 @@
         ///FlexPaper组件的SWF框架路径
         '/Scripts/FlexPaper', //这个右键还有打印
         //'/Scripts/FlexPaperViewer2',
+        //'/Scripts/flexpaper1',
         'viewerPlaceHolder',
+
         {
             config:
             {
                 ///需要显示的.swf 不能显示1.swf的，版本有问题
-                SwfFile: '@file',
+                SwfFile: escape('@file'), //  SwfFile : escape('中文ajava.swf')改为SwfFile : decodeURI('中文ajava.swf')
                 //SwfFile: '/swf/{lnn[*,0].swf,512}', //分页 分页时，不能进行搜索
                 //SwfFile: '/swf/{ann[*,0].swf,112}', //分页 分页时，不能进行搜索
-                //SwfFile: '/swf/linuxx.swf',
+                //SwfFile: escape('/swf/任务 - 副本 - (239123) !#$%^#副本.swf'),
                 //Scale: 1.4,
                 ZoomTransition: 'easeOut',
                 ZoomTime: 0.5,
@@ -55,6 +57,7 @@
                 localeChain: 'zh_CN'
             }
         });
+       
     });
 </script>
 
